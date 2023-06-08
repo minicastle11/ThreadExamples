@@ -2,6 +2,8 @@ package edu.handong.csee.java.examples.thread.lab;
 
 import java.util.ArrayList;
 
+import edu.handong.csee.java.examples.thread.pool.SumPartiallyThread;
+
 public class SumMultipleThreads {
 
 	public static void main(String[] args) {
@@ -33,8 +35,9 @@ public class SumMultipleThreads {
 
 		long grandTotal = 0;
 		for(SumRunner runner:sumRunners) {
-			grandTotal += runner.totalSum;
+			grandTotal += runner.getTotalSumFromTo();
 		}
+		
 
 		System.out.println("Grand Total = " + grandTotal);
 	}
